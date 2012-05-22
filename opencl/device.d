@@ -29,7 +29,7 @@ public:
 @property
 {
 	//! the OpenCL device type
-	auto deviceType()
+	cl_device_type deviceType()
 	{
 		return getInfo!cl_device_type(CL_DEVICE_TYPE);
 	}
@@ -213,13 +213,13 @@ public:
 	}
 	
 	//! Describes single precision floating-point capability of the device. This is a bit-field, see the docs
-	auto singleFpConfig()
+	cl_device_fp_config singleFpConfig()
 	{
 		return getInfo!cl_device_fp_config(CL_DEVICE_SINGLE_FP_CONFIG);
 	}
 
 	//! Describes double precision floating-point capability of the device. Make sure the cl_khr_fp64 extension is supported
-	auto doubleFpConfig()
+	cl_device_fp_config doubleFpConfig()
 	{
 		return getInfo!cl_device_fp_config(CL_DEVICE_DOUBLE_FP_CONFIG);
 	}
@@ -228,7 +228,7 @@ public:
 	 *	Type of global memory cache supported. Valid values are:
 	 *	CL_NONE, CL_READ_ONLY_CACHE and CL_READ_WRITE_CACHE
 	 */
-	auto globalMemCacheType()
+	cl_device_mem_cache_type globalMemCacheType()
 	{
 		return getInfo!cl_device_mem_cache_type(CL_DEVICE_GLOBAL_MEM_CACHE_TYPE);
 	}
@@ -267,7 +267,7 @@ public:
 	 *	Type of local memory supported.
 	 *	This can be set to CL_LOCAL implying dedicated local memory storage such as SRAM, or CL_GLOBAL
 	 */
-	auto localMemType()
+	cl_device_local_mem_type localMemType()
 	{
 		return getInfo!cl_device_local_mem_type(CL_DEVICE_LOCAL_MEM_TYPE);
 	}
@@ -332,7 +332,7 @@ public:
 	 *
 	 *		The mandated minimum capability is: CL_EXEC_KERNEL.
 	 */
-	auto deviceExecCapabilities()
+	cl_device_exec_capabilities deviceExecCapabilities()
 	{
 		return getInfo!cl_device_exec_capabilities(CL_DEVICE_EXECUTION_CAPABILITIES);
 	}
@@ -349,7 +349,7 @@ public:
 	 *
 	 *	TODO: make own functions for outOfOrder and profiling?
 	 */
-	auto commandQueueProperties()
+	cl_command_queue_properties commandQueueProperties()
 	{
 		return getInfo!cl_command_queue_properties(CL_DEVICE_QUEUE_PROPERTIES);
 	}

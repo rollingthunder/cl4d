@@ -124,7 +124,7 @@ public:
 		}
 		
 		//! properties argument specified in the constructor, otherwise null or [0]
-		auto contextProperties()
+		cl_context_properties[] contextProperties()
 		{
 			return getArrayInfo!cl_context_properties(CL_CONTEXT_PROPERTIES);
 		}

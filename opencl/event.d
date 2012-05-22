@@ -111,26 +111,26 @@ public:
 		 *
 		 *	For user event objects, a null value is returned
 		 */
-		auto commandQueue()
+		cl_command_queue commandQueue()
 		{
 			return getInfo!cl_command_queue(CL_EVENT_COMMAND_QUEUE);
 		}
 		
 		//! the context associated with event
-		auto context()
+		cl_context context()
 		{
 			return getInfo!cl_context(CL_EVENT_CONTEXT);
 		}
 
 		//! the command associated with event
-		auto commandType()
+		cl_command_type commandType()
 		{
 			return getInfo!cl_command_type(CL_EVENT_COMMAND_TYPE);
 		}
 
 		//! the execution status of the command identified by this event
 		//! negative values are errors, probably of type cl_errcode
-		auto status()
+		cl_command_execution_status status()
 		{
 			auto res = getInfo!cl_command_execution_status(CL_EVENT_COMMAND_EXECUTION_STATUS);
 
