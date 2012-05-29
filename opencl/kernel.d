@@ -130,7 +130,7 @@ public:
 			auto tmp = arg.cptr;
 			setArgx(idx, arg.cptr.sizeof, &tmp);
 		}
-		else static if (is(ArgType : CLObject))
+		else static if (is(ArgType : Object))
 			static assert(0, "can't set " ~ ArgType.stringof ~ " as a kernel argument!");
 		else static if (is(ArgType == LocalArgSize))
 			setArgx(idx, arg.size, null); // it's a __local parameter, so just set its size
